@@ -1,0 +1,62 @@
+<div id="content" >
+    <div class="row heading">
+        <a href="#"><h3>LOCATION CITY</h3></a>
+        <div class="clear-br"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="row">
+                <div class="heading">
+                    <h4>{{'LOCATION_CITY_EDIT'|translate}}</h4>
+                </div>
+                <div class="jarviswidget" id="wid-id-2" data-widget-colorbutton="false" data-widget-editbutton="false">
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-eye"></i> </span>
+                        <h2>{{'LOCATION_CITY_INFO_EDIT'| translate}}</h2>
+                    </header>
+                    <div class="widget-body">
+                        <form>
+                            <fieldset>
+                                <div class="form-group">
+                                    <label>{{'LOCATION_CITY_INFO_NAME'| translate}}</label>
+                                    <input class="form-control" placeholder="HCM" type="text" ng-model="cityName">
+                                </div>
+                                <div class="form-group">
+                                    <label>{{'LOCATION_CITY_INFO_DESCRIPTION'| translate}}</label>
+                                    <textarea class="form-control" placeholder="Type your description" rows="3" ng-model="cityDescription"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <input class="input-image" type="file" style="width: 300px" ngf-select ng-model="picFile" name="file" accept="image/*" ngf-max-size="2MB" ngf-model-invalid="errorFile">
+                                </div>
+                                <div class="form-group">
+                                    <label>{{'LOCATION_CITY_INFO_COUNTRYCODE'| translate}}</label>
+                                    <input class="form-control" placeholder="71000" type="text" ng-model="countryCode">
+                                </div>
+                                <div class="form-group">
+                                    <label>{{'LOCATION_CITY_INFO_STATUS'| translate}}</label><br>
+                                    <label >
+                                        <input class="radiobox" name="style-0a" type="radio" ng-model="status" value="1">
+                                        <span>{{'LOCATION_CITY_INFO_STATUS_ACTIVE'| translate}}</span> 
+                                        
+                                    </label>
+                                    <label >
+                                        <input class="radiobox" name="style-0a" type="radio" ng-model="status" value="0">
+                                        <span>{{'LOCATION_CITY_INFO_STATUS_INACTIVE'| translate}}</span>  
+                                    </label>
+                                </div>
+                            </fieldset>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary" ng-click="updateInfoCity(picFile)">{{'BUTTON_SAVE'|translate}}</button>
+                                <button type="button" ng-click="goListCity()" class="btn btn-default">{{'BUTTON_CANCEL'|translate}}</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <br>
+            <img ng-show="myForm.file.$valid" ngf-thumbnail="imgCity" style="width: 300px; height: 300px;" class="thumb img-responsive">
+        </div>
+    </div>
+</div>

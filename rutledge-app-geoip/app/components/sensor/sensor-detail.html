@@ -1,0 +1,90 @@
+<ul class="nav nav-tabs">          
+   <li ng-class="{active:tab===1}">
+     <a href ng-click="tab = tab==1 ? a : 1">Sensor Detail</a>              
+   </li>          
+   <li ng-class="{active:tab===2}">
+      <a href ng-click="tab = tab==2 ? a : 2">History</a>              
+   </li>          
+   <li ng-class="{active:tab===3}">
+     <a href ng-click="tab = tab==3 ? a : 3">Charts</a>          
+   </li>
+   <li ng-class="{active:tab===4}">
+     <a href ng-click="tab = tab==4 ? a : 4">Export</a>          
+   </li>             
+   <br><br>
+     
+</ul> 
+<div ng-show="tab === 1"> 
+  <div class="sensor-info">
+      <div class="row">
+        <div class="col-md-3">
+            <p>Group :  {{sensorDetail.groupName}}</p>
+            <p>Tenant : {{sensorDetail.tenantName}}</p>
+            <p>User : {{sensorDetail.userName}}</p>
+        </div>
+      </div>
+  </div>
+</div>          
+<div ng-show="tab === 2"> 
+  <div id="history">
+        <div class="row">
+            <div ng-repeat="item in topFive">
+              <div class="history-item col-md-2">
+                <p><img src="./images/time.png" width="20" height="20">{{item.createDate| date:'yyyy-MM-dd HH:mm:ss'}}</p>
+                <hr>
+                <p><img src="./images/h2s.png" width="20" height="20">H2S :{{item.h2s}}</p>
+                <p><img src="./images/t.png" width="20" height="20">Temperature : {{item.temp}} °C</p>
+                <p><img src="./images/heart.png" width="20" height="20">Heartbeat : {{item.heartbeat}}</p>
+              </div>
+            </div>
+        </div>
+  </div>
+</div>
+
+
+<div ng-show="tab === 3">
+  <canvas id="bar{{sensorID}}" class="chart chart-bar"chart-data="data" chart-labels="labels" chart-series="series"></canvas>
+  <!-- <chart value="myChart"></chart> -->
+</div>
+
+
+<div ng-show="tab ===4">
+  <div class="row pull-left export-config">
+    <div class="col-md-3">
+      <img ng-click="exportFile()" src="./images/pdf.png">
+    </div>
+    <div class="col-md-3">
+      <img src="./images/word.png">
+    </div>
+    <div class="col-md-3">
+      <img src="./images/excel.png">
+    </div>
+    <div class="col-md-3">
+      <img src="./images/cvs.png">
+    </div>
+  </div>
+</div>
+<style type="text/css">
+
+  .sensor-info{
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+
+  .sensor-info h3{
+    text-align:center;
+  }
+
+  .history-item{
+    margin: 10px;
+  }
+
+  .history-item img{
+    margin-right: 10px ;
+  }
+
+  .export-config{
+    margin: 10px 10px 10px 40px;
+  }
+
+</style>  

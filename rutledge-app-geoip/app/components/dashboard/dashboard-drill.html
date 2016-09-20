@@ -1,0 +1,25 @@
+<div id="content">
+    <div class="row heading">
+        <a ui-sref=".dashboard"><h3>DASHBOARD MANAGEMENT</h3></a>
+        <button class="btn btn-default fa fa-arrow-left" type="button" ng-click="goBack()">
+            Back
+        </button>
+        <div class="clear-br"></div>
+    </div>
+    <div class="row">
+        <h3>All Zone of {{drillname}}</h3>
+        <div class="col-md-12 row" >
+            <div class="city-item col-md-2" ng-repeat="zone in allZones" ng-click="changeZone(zone.id)">
+                <div class="city-content">
+                    <p class="cityname">{{zone.name}} <span class="people-in-room  badge">{{zone.staffnumber}}</span></p>
+                    <img class=".img-responsive .img-center imgcity" ng-src="{{zone.zonemap}}">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12" ng-show="isShowZoneEmty">
+            <div class="alert alert-warning" role="alert">
+                <strong>No Zone Denied by {{drillname}} {{date}}</strong>
+            </div>
+        </div>
+    </div>
+</div>

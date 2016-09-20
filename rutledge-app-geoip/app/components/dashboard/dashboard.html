@@ -1,0 +1,17 @@
+<div id="content">
+    <div class="row heading">
+        <a ui-sref=".dashboard"><h3>{{'DASHBOARD'|translate}}</h3></a>
+        <div class="clear-br"></div>
+    </div>
+    <div class="row">
+       <div ng-repeat="city in allCitys">
+            <div class="clearfix" ng-if="$index % 6 == 0"></div>
+            <div class="city-item col-md-2" ng-click="changeCity(city.id,city.name)">
+                <div class="city-content">
+                    <p class="cityname">{{city.name}}<span class="zonenumber  badge">{{city.staffnumber}}</span></p>
+                    <img class=".img-responsive .img-center imgcity" ng-src="{{city.imagecity}}"  ng-model="data.cityId">
+                </div>
+            </div>
+       </div>
+    </div>
+</div>

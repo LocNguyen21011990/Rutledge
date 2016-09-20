@@ -1,0 +1,164 @@
+#logo img {
+    width: 30px !important;
+}
+
+.clear-br {
+    height: 1px;
+    background: #333;
+    margin-bottom: 20px;
+}
+
+.heading h3 {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    padding: 0px;
+}
+
+.heading a {
+    text-decoration: none;
+    color: #333;
+}
+
+.heading a:hover {
+    text-decoration: none;
+}
+
+.room {
+    width: 100%;
+    height: 150px;
+    margin-right: 10px;
+    margin-top: 10px;
+    padding: 5px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+}
+
+.room:hover {
+    opacity: 0.8;
+    background: #E8E8E8;
+}
+
+.room-header {
+    border-bottom: 1px solid #CCC;
+}
+
+.room-header .room-name {
+    margin: 5px;
+}
+
+.room-header .people-in-room {
+    position: absolute;
+    margin: 10px;
+    right: 0;
+}
+
+.people-in-room:hover {
+    cursor: pointer;
+    background: red;
+}
+
+.room-info {
+    margin-left: 10px;
+}
+
+
+/*.option-box {
+    margin-left: 10px;
+}*/
+
+.option-box i {
+    width: 40px;
+    margin-left: 5px;
+}
+
+.option-tool {
+    text-align: center;
+}
+
+.add-rule-btn {
+    margin-left: 5px !important;
+}
+
+.table-detail {
+    margin-left: 20px;
+}
+
+.drill-item {
+    border: 1px solid #CCC;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 0px;
+    cursor: pointer;
+    width: 21.1% !important;
+}
+
+.drill {
+    border-right: 1px solid #CCC;
+    overflow: scroll;
+    height: 500px;
+    padding-left: 0px;
+}
+
+.img-responsive .img-center {
+    margin: 0 auto;
+    display: inline;
+}
+
+.imgdrill {
+    width: 100%;
+    height: 100px;
+    padding: 0px;
+}
+
+.drillname {
+    border-bottom: 1px solid #CCC;
+    padding: 10px;
+}
+
+.city-item {
+    padding: 10px;
+    cursor: pointer;
+}
+.city-content {
+    border: 1px solid #CCC;
+    border-radius: 5px;
+}
+.img-responsive .img-center {
+    margin: 0 auto;
+    display: inline;
+}
+
+.imgcity {
+    width: 100%;
+    height: 180px;
+    padding: 0px;
+}
+
+.cityname {
+    border-bottom: 1px solid #CCC;
+    padding: 10px;
+    margin-bottom: 0px;
+}
+
+.yellow {
+    opacity: 0.8;
+    background: #E8E8E8;
+}
+.yellow .drillname {
+    font-weight: bold;
+}
+.zonenumber{
+    float: right;
+}
+
+.date{
+    border-radius: 5px;
+}
+.login-header-big {
+    text-align: center;
+    text-transform: uppercase;
+}
+.login-box {
+    position: fixed;
+    top: 10%;
+}

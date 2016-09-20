@@ -1,0 +1,134 @@
+<style type="text/css">
+.floor {
+    border-right: 1px solid #777;
+}
+
+.room {
+    background: #eee;
+    width: 100%;
+    height: 200px;
+    margin: 10px;
+    position: relative;
+}
+
+.room:hover {
+    opacity: 0.9px;
+    border: 1px solid #333;
+    color: #333;
+    border-radius: 5px;
+}
+
+.room-header {
+    border-bottom: 1px solid #777;
+}
+
+.room-header .room-name {
+    margin: 10px;
+    padding: 10px;
+}
+
+.room-header .people-in-room {
+    position: absolute;
+    margin: 10px;
+    right: 0;
+}
+
+.people-in-room:hover {
+    cursor: pointer;
+}
+
+.current-h2s {
+    font-size: 15px;
+    margin: 10px;
+    position: absolute;
+    right: 0px;
+}
+
+.h2s-index {
+    background: red;
+    padding: 10px;
+}
+
+.h2s-index:hover {
+    cursor: pointer;
+}
+
+.room-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    margin-bottom: 5px;
+}
+
+.room-detail {
+    background-color: #eee;
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.yellow {
+    background-color: yellow;
+    cursor: pointer;
+}
+
+#charth2s{
+    margin-top: 20px;
+    margin-left: 10px;
+}
+</style>
+<!-- MAIN PANEL -->
+<div id="main" role="main">
+    <!-- RIBBON -->
+    <div id="ribbon">
+    </div>
+    <!-- END RIBBON -->
+    <!-- MAIN CONTENT -->
+    <div id="content">
+        <div class="container">
+            <div>
+                <input type="text" ng-model="iInterval"></input>
+                <button ng-click="reLoad()">Auto ReLoad</button>
+                <button ng-click="stopLoad()">Stop Reload</button>
+            </div>
+            <div class="index-nav">
+                <a href=""><h6>Hochiminh City >> Quang Trung Software City >> Anna building >> G</h6></a>
+            </div>
+            <div class="floor col-md-4">
+                <div class="row">
+                    <div class="col-md-6" ng-repeat="room in roomInfos">
+                        <div class="room" ng-class="{yellow : room.roomID == selectedObject}">
+                            <div class="room-header">
+                                <h3 class="room-name">{{room.roomName}}
+                                    <span ng-click="showRoomDetail(room.roomID)" class="people-in-room badge">{{room.npeople}}</span>
+                                </h3>
+                            </div>
+                            <div class="room-info">
+                                <div class="h2s" ng-click="showChart(room.roomID)">
+                                    <p class="current-h2s">H2S <span class="h2s-index badge">{{room.h2s}}</span></p>
+                                </div>
+                                <img src="./images/gateway.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row" ng-show="isShow">
+                    <div class="room-detail">
+                        <table class="table table-striped table-bordered" width="100%" datatable="" dt-options="dtOptions" dt-columns="dtColumns" dt-instance="dtInstance">
+                        </table>
+                    </div>
+                </div>
+                <div class="row" ng-hide="isShow">
+                    <!-- <div id="charth2s"></div> -->
+                    <canvas id="bar" class="chart chart-line"chart-data="data" chart-labels="labels" chart-series="series"></canvas>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,107 @@
+<div id="content">
+    <div class="row heading">
+        <a href="#"><h3>LOCATION ROOM</h3></a>
+        <div class="clear-br"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="row">
+                <div class="heading">
+                    <h4>{{'LOCATION_ROOM_ADD'|translate}}</h4>
+                </div>
+                <div class="jarviswidget" id="wid-id-2" data-widget-colorbutton="false" data-widget-editbutton="false">
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-eye"></i> </span>
+                        <h2>{{'LOCATION_ROOM_INFO'|translate}}</h2>
+                    </header>
+                    <div class="widget-body">
+                        <form>
+                            <fieldset>
+                                <div class="form-group">
+                                    <label>{{'LOCATION_ROOM_INFO_NAME'| translate}}</label>
+                                    <input class="form-control" placeholder="HCM" type="text" ng-model="roomName">
+                                </div>
+                                <div class="form-group">
+                                    <label>{{'LOCATION_ROOM_INFO_DESCRIPTION'|translate}}</label>
+                                    <textarea class="form-control" placeholder="Type your description" rows="3" ng-model="roomDescription"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputGender">{{'LOCATION_DRILL_INFO_CITYCODE'| translate}}</label>
+                                    <select class="form-control" placeholder="City" ng-model="cityID" ng-click="getDrillByCityId()">
+                                        <option value="">Select City...</option>
+                                        <option ng-repeat="city in cities" value="{{city.id}}">{{city.name}}</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputGender">{{'LOCATION_ZONE_INFO_DRILLCODE'|translate}}</label>
+                                    <select class="form-control" placeholder="Drill" ng-model="drillID" ng-click="getZoneByDrillId()">
+                                        <option value="">Select Drill...</option>
+                                        <option ng-repeat="drill in allDrills" value="{{drill.id}}">{{drill.name}}</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputGender">{{'LOCATION_ROOM_INFO_ZONECODE'|translate}}</label>
+                                    <select class="form-control" placeholder="Zone" ng-model="zoneID">
+                                        <option value="">Select Zone...</option>
+                                        <option ng-repeat="zone in allZones" value="{{zone.id}}">{{zone.name}}</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>{{'LOCATION_ROOM_INFO_STATUS'|translate}}</label>
+                                    <br>
+                                    <label>
+                                        <input class="radiobox" name="style-0a" type="radio" ng-model="status" value="1">
+                                        <span>{{'LOCATION_ROOM_INFO_STATUS_ACTIVE'|translate}}</span>
+                                    </label>
+                                    <label>
+                                        <input class="radiobox" name="style-0a" type="radio" ng-model="status" value="0">
+                                        <span>{{'LOCATION_ROOM_INFO_STATUS_INACTIVE'|translate}}</span>
+                                    </label>
+                                </div>
+                            </fieldset>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary" ng-click="createZone()">{{'BUTTON_SAVE'| translate}}</button>
+                                <button type="button" ng-click="clear()" class="btn btn-default">{{'BUTTON_RESET'|translate}}</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                <div class="table-detail">
+                    <div class="heading">
+                        <h4>{{'LOCATION_ZONE_ALL'|translate}}</h4>
+                    </div>
+                    <div class="col-md-12" style="padding: 0px; margin-bottom: 10px;">
+                        <button type="button" ng-click="refreshData()" class="btn btn-default" ng-show="isShowRefresh">Refresh</button>
+                    </div>
+                    <div class="row"  style="padding: 0px; margin-bottom: 10px;">
+                        <div class="col-md-4">
+                            <select id="city" ng-model="data.cityid" class="form-control" ng-change="changeCity(data.cityid)">
+                                <option value="" disabled selected>Select City to filter</option>
+                                <option ng-repeat="city in cities" value="{{ city.id }}">{{ city.name }}</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4" ng-show="isShowDrill">
+                            <select id="drill" ng-model="data.drillId" class="form-control" ng-change="changeDrill(data.drillId)">
+                                <option value="" disabled selected>Select Drill to filter</option>
+                                <option ng-repeat="drill in drills" value="{{ drill.id }}">{{ drill.name }}</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4" ng-show="isShowZone">
+                            <select id="zone" ng-model="data.zoneId" class="form-control" ng-change="changeZone(data.zoneId)">
+                                <option value="" disabled selected>Select your Zone</option>
+                                <option ng-repeat="zone in zones" value="{{ zone.id }}">{{ zone.name }}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="citys-table">
+                        <table class="table table-striped table-bordered" width="100%" datatable="" dt-options="dtOptions" dt-columns="dtColumns" dt-instance="dtInstance">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

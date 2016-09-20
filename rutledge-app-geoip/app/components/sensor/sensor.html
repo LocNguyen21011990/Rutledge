@@ -1,0 +1,30 @@
+		<!-- MAIN PANEL -->
+		<div id="main" role="main">
+
+			<!-- RIBBON -->
+			<div id="ribbon">
+			</div>
+			<!-- END RIBBON -->
+
+			<!-- MAIN CONTENT -->
+			<div id="content" >
+				<div>
+					<input type="text" ng-model="iInterval"></input>
+					<button ng-click="reLoad()">Auto ReLoad</button>
+					<button ng-click="stopLoad()">Stop Reload</button>
+				</div>
+				<div class="row">											
+					<div id="sensorTable">
+						<table  class="table table-striped table-bordered" width="100%" datatable="" dt-options="dtOptions" dt-columns="dtColumns" dt-instance="dtInstance" >
+					</table>
+					</div>
+				</div>
+				<div sendor-detail>
+					
+				</div>
+			</div>
+		</div>
+
+		
+
+		

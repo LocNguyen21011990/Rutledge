@@ -1,0 +1,56 @@
+<div id="content">
+    <div class="row heading">
+        <a href="#"><h3>{{'RULE_MASTER'| translate}}</h3></a>
+        <div class="clear-br"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="input-group">
+                <select class="form-control" placeholder="Type template" ng-model="typetemplateID">
+                    <option value="">Select Template...</option>
+                    <option ng-repeat="typetemplate in allTypeTemplate" value="{{typetemplate.id+','+typetemplate.tablename}}">{{typetemplate.name}}</option>
+                </select>
+                <div class="input-group-btn">
+                    <button class="btn btn-default add-rule-btn" type="button" ng-click="addrule(typetemplateID)">
+                        {{'RULE_MASTER_BUTTON_ADD'|translate}}
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="input-group">
+                <select class="form-control" placeholder="Type template" ng-model="eventID" ng-click="viewRuleByEvent(eventID)">
+                    <option value="" selected>Select Event</option>
+                    <option selected value="all">All Event</option>
+                    <option ng-repeat="event in events" value="{{event.id}}">{{event.name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="input-group">
+                <select class="form-control" placeholder="Type template" ng-model="roomID" ng-click="viewRuleByRoom(roomID)">
+                    <option value="" selected>Select Room</option>
+                    <option selected value="all">All Room</option>
+                    <option ng-repeat="room in ruleRooms" value="{{room.id}}">{{room.name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-default" type="button" ng-click="reloadPage()" data-translate>
+                <i class="fa fa-refresh" aria-hidden="true"></i> {{'RULE_MASTER_BUTTON_REFRESH'| translate}}
+            </button>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div>
+            <div class="heading">
+                <h4>{{'RULE_MASTER_INFO_ALL'|translate}}</h4>
+                <div class="clear-br"></div>
+            </div>
+            <div class="rules-table">
+                <table class="table table-striped table-bordered" width="100%" datatable="" dt-options="dtOptions" dt-columns="dtColumns" dt-instance="dtInstance">
+            </div>
+        </div>
+    </div>
+</div>

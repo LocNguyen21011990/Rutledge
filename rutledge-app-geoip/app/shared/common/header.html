@@ -1,0 +1,66 @@
+<header id="header">
+	<div id="logo-group">
+		<span id="logo"> <img src="images/logo-rutledge.png" alt="Rasia"> </span>
+	</div>
+	<div class="pull-right">
+		<div id="hide-menu" class="btn-header pull-right">
+			<span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
+		</div>
+		<div id="logout" class="btn-header transparent pull-right">
+			<span> <a href="login.html" title="Sign Out" data-action="userLogout" data-logout-msg="You can improve your security further after logging out by closing this opened browser"><i class="fa fa-sign-out"></i></a> </span>
+		</div>
+		<div id="search-mobile" class="btn-header transparent pull-right">
+			<span> <a href="javascript:void(0)" title="Search"><i class="fa fa-search"></i></a> </span>
+		</div>
+		<form action="search.html" class="header-search pull-right">
+			<input id="search-fld"  type="text" name="param" placeholder="Find reports and more" data-autocomplete='[
+			"ActionScript",
+			"AppleScript",
+			"Asp",
+			"BASIC",
+			"C",
+			"C++",
+			"Clojure",
+			"COBOL",
+			"ColdFusion",
+			"Erlang",
+			"Fortran",
+			"Groovy",
+			"Haskell",
+			"Java",
+			"JavaScript",
+			"Lisp",
+			"Perl",
+			"PHP",
+			"Python",
+			"Ruby",
+			"Scala",
+			"Scheme"]'>
+			<button type="submit">
+				<i class="fa fa-search"></i>
+			</button>
+			<a href="javascript:void(0);" id="cancel-search-js" title="Cancel Search"><i class="fa fa-times"></i></a>
+		</form>
+		<div id="fullscreen" class="btn-header transparent pull-right">
+			<span> <a href="javascript:void(0);" data-action="launchFullscreen" title="Full Screen"><i class="fa fa-arrows-alt"></i></a> </span>
+		</div>
+		<!-- multiple lang dropdown : find all flags in the flags page -->
+		<ul class="header-dropdown-list hidden-xs">
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown">
+					<img src="img/blank.gif" class="{{defaultClassLanguage}}" alt="{{defaultLanguage}}">
+					<span>{{defaultLanguage}}</span>
+					<i class="fa fa-angle-down"></i>
+				</a>
+				<ul class="dropdown-menu pull-right">
+					<li ng-repeat="language in languages" ng-class="{ active: isActive(language.key)}">
+						<a ng-click="changeLanguage(language)"><img src="img/blank.gif" class="{{language.cflag}}" alt="{{language.name}}"> {{language.name}}</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<!-- end multiple lang -->
+	</div>
+</header>
+
+		

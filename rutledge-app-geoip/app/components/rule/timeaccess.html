@@ -1,0 +1,123 @@
+<style type="text/css">
+.table-detail {
+    margin-left: 20px;
+}
+
+.option-tool {}
+
+.option-tool button {
+    margin-left: 1px;
+    text-align: center;
+}
+
+.option-tool button i {
+    text-align: center;
+}
+</style>
+<div id="content">
+    <div class="row heading">
+        <a href="#"><h3>{{'RULE_MASTER_DEFINE'}}</h3></a>
+        <button class="btn btn-default fa fa-arrow-left" type="button" ng-click="goBack()">
+            {{'BUTTON_BACK'|translate}}
+        </button>
+    </div>
+    <div class="row">
+        <div class="clear-br"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="row">
+                <div class="heading">
+                    <h4>{{'TIMEACCESS_RULE_ADD'|translate}}</h4>
+                </div>
+                <div class="jarviswidget" id="wid-id-2" data-widget-colorbutton="false" data-widget-editbutton="false">
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-cog"></i> </span>
+                        <h2>{{'TIMEACCESS_RULE_INFO'|translate}}</h2>
+                    </header>
+                    <!-- widget div-->
+                    <div>
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                        </div>
+                        <div class="widget-body">
+                            <form>
+                                <fieldset>
+                                    <div class="form-group">
+                                        <label>{{'TIMEACCESS_RULE_INFO_TITLE'|translate}}</label>
+                                        <input class="form-control" placeholder="Deny time working" type="text" ng-model="title">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>{{'TIMEACCESS_RULE_INFO_MESSAGE'|translate}}</label>
+                                        <input class="form-control" placeholder="Type your message" type="text" ng-model="message">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>{{'TIMEACCESS_RULE_INFO_DESCRIPTION'|translate}}</label>
+                                        <textarea class="form-control" placeholder="Type your description" rows="3" ng-model="description"></textarea>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>{{'TIMEACCESS_RULE_INFO_TIMEBEGIN'|translate}}</label>
+                                                <div class="input-append bootstrap-timepicker-component">
+                                                    <input type="text" class="timepicker-default form-control" ng-model="timeBegin" />
+                                                    <span class="add-on"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>{{'TIMEACCESS_RULE_INFO_TIMEEND'|translate}}</label>
+                                                <div class="input-append bootstrap-timepicker-component">
+                                                    <input type="text" class="timepicker-default form-control" ng-model="timeEnd" />
+                                                    <span class="add-on"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-md-6">
+                                            <div class="form-group">
+                                                <label>{{'TIMEACCESS_RULE_INFO_PRIORITY'|translate}}</label>
+                                                <input class="form-control" placeholder="1" type="text" ng-model="priority">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-md-12">
+                                            <label for="exampleInputGender">{{'TIMEACCESS_RULE_INFO_ROOM'|translate}}</label>
+                                            <select id="selectRoom" class="select2" multiple placeholder="Choose Room will apply rule" multiple style="width:100%" ng-model="roomID">
+                                                <option ng-repeat="room in allRooms" value="{{room.id}}">{{room.name}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-md-12">
+                                            <label for="exampleInputGender">{{'TIMEACCESS_RULE_INFO_EVENT'|translate}}</label>
+                                            <select id="selectEvent" class="select2" multiple placeholder="Choose Event will apply rule" multiple style="width:100%" ng-model="eventID">
+                                                <option ng-repeat="event in allEvents" value="{{event.id}}">{{event.name}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary" ng-click="createTimeAccessRule()">{{'BUTTON_SAVE'|translate}}</button>
+                                    <button type="button" ng-click="clear()" class="btn btn-default">{{'BUTTON_RESET'|translate}}</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#selectRoom').select2();
+    $('#selectEvent').select2();
+    $('.timepicker-default').timepicker({
+        showMeridian: false
+    });
+});
+</script>

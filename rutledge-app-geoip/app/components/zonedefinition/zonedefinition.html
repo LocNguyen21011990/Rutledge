@@ -1,0 +1,48 @@
+<script src="/app/components/zonedefinition/zonedefinitionScript.js"></script>
+
+<div id="content">
+    <div class="row heading">
+        <input type="hidden" ng-model="hosttest"></input>
+        <a href="locationmonitoring"><h3>{{'DEFINE_ZONE'|translate}}</h3></a>
+        <div class="clear-br"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <select id="city" ng-model="data.cityId" class="form-control" ng-change="changeCity(data.cityId)">
+                <option value="">Select your City</option>
+                <option ng-repeat="city in cities" value="{{ city.id }}">{{ city.name }}</option>
+            </select>
+        </div>
+        <div class="col-md-2" ng-show="isShowDrill">
+            <select id="drill" ng-model="data.drillId" class="form-control" ng-change="changeDrill(data.drillId)">
+                <option value="">Select your Drill</option>
+                <option ng-repeat="drill in drills" value="{{ drill.id }}">{{ drill.name }}</option>
+            </select>
+        </div>
+        <div class="col-md-2" ng-show="isShowZone">
+            <select id="zone" ng-model="data.zoneId" class="form-control" ng-change="changeZone(data.zoneId)" onchange ="loadImage()">
+                <option value="">Select your Zone</option>
+                <option ng-repeat="zone in zones" value="{{ zone.id +',' + zone.zonemap}}">{{ zone.name }}</option>
+            </select>
+        </div>
+        <div class="col-md-2" ng-show="isShowRoom">
+            <select id="room" ng-model="data.roomId" class="form-control" ng-change="changeRoom(data.roomId)" onchange="changeRoom()">
+                <option value="" disabled selected>Select your Room</option>
+                <option ng-repeat="room in rooms" value="{{ room.id }}">{{ room.name }}</option>
+            </select>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-9">
+          <canvas id="canvas" style="border:1px solid #000000;" width="747" height="378"></canvas>
+        </div>
+        <div class="col-md-3">
+          <input type="button"  ng-show="isShowBtnRoom" style="width:120px;" value = "Add room"onclick="addShape();" class="form-control"/>
+          <input type="button"  ng-show="isShowBtnRoom" style="width:120px;" value="Remove room" onclick="removeShapes();" class="form-control"/>
+          <input id="save" type="button" ng-show="isShowRoom" style="width:120px;" value = "Finish" onclick="save()" class="form-control"/>
+        </div>
+    </div>
+</div>
+
+

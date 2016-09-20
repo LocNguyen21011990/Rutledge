@@ -1,0 +1,48 @@
+<link rel="stylesheet" type="text/css" href="css/login.css">
+<div id="container">
+    <div class="col-md-4 col-md-offset-4 login-box">
+        <h1 class="txt-color-red login-header-big">GeoIP Administrator</h1>
+        <form class="smart-form client-form" ng-submit="login()">
+            <header>
+                Sign In
+            </header>
+            <fieldset>
+
+                <div class="alert alert-block alert-danger" ng-show="isFailed">
+                    <h4 class="alert-heading">Access Failed !</h4>
+                    <p>
+                        {{loginMessage}}
+                    </p>
+                </div>
+                <section>
+                    <label class="label">Username</label>
+                    <label class="input"> <i class="icon-append fa fa-user"></i>
+                        <input type="text" name="email" ng-model="username" required>
+                        <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> Please enter username</b></label>
+                </section>
+ 
+                <section>
+                    <label class="label">Password</label>
+                    <label class="input"> <i class="icon-append fa fa-lock"></i>
+                        <input type="password" name="password" ng-model="password" required>
+                        <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> Enter your password</b> </label>
+                    <div class="note">
+                        <a href="#/forgotpassword">Forgot password?</a>
+                    </div>
+                </section>
+ 
+                <section>
+                    <label class="checkbox">
+                        <input type="checkbox" name="remember" checked="">
+                        <i></i>Stay signed in</label>
+                </section>
+            </fieldset>
+            <footer>
+                <button type="submit" class="btn btn-primary" ngClick="Submit">
+                    Sign in
+                </button>
+            </footer>
+        </form>
+    </div>
+</div>
+

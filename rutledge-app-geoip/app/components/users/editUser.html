@@ -1,0 +1,71 @@
+<div id="content">
+    <div class="row heading">
+        <a href="#"><h3>USERS MANAGEMENT</h3></a>
+        <div class="clear-br"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="row">
+                <div class="jarviswidget" id="wid-id-2" data-widget-colorbutton="false" data-widget-editbutton="false">
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
+                        <h2>{{'USER_MANAGEMENT_EDIT'|translate}}</h2>
+                    </header>
+                    <div class="widget-body">
+                        <form>
+                            <fieldset>
+                                <div class="form-group">
+                                    <label>{{'USER_MANAGEMENT_ADD_INFO_USERNAME'|translate}}</label>
+                                    <input ng-model="username" ng-readonly="true" class="form-control" placeholder="Username" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <label>{{'USER_MANAGEMENT_ADD_INFO_PASSWORD'|translate}}</label>
+                                    <input ng-model="password" class="form-control" placeholder="Password" type="password">
+                                </div>
+                                <div class="form-group">
+                                    <label>{{'USER_MANAGEMENT_ADD_INFO_NAME'|translate}}</label>
+                                    <input ng-model="fullname" class="form-control" placeholder="Name" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <label>{{'USER_MANAGEMENT_ADD_INFO_EMAIL'|translate}}</label>
+                                    <input ng-model="email" class="form-control" placeholder="Email address" type="email">
+                                </div>
+                                <div class="form-group">
+                                    <label>{{'USER_MANAGEMENT_ADD_INFO_GROUP'|translate}}</label>
+                                    <select id="selectGroupId" class="select2" multiple placeholder="Choose Group will apply user" multiple style="width:100%" ng-model="groupID">
+                                        <option ng-repeat="group in allGroup" value="{{group.id}}">{{group.name}}</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>{{'USER_MANAGEMENT_INFO_STATUS'|translate}}</label>
+                                    <br>
+                                    <label>
+                                        <input class="radiobox" name="style-0a" type="radio" value="1" ng-model="status">
+                                        <span>{{'USER_MANAGEMENT_INFO_STATUS_ACTIVE'|translate}}</span>
+                                    </label>
+                                    <label>
+                                        <input class="radiobox" name="style-0a" type="radio" value="0" ng-model="status">
+                                        <span>{{'USER_MANAGEMENT_INFO_STATUS_INACTIVE'|translate}}</span>
+                                    </label>
+                                </div>
+                            </fieldset>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary" ng-click="updateUser()">{{'BUTTON_SAVE' | translate}}</button>
+                                <button type="button" ng-click="clear()" class="btn btn-default">{{'BUTTON_RESET'|translate}}</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+function setValueDropdown() {
+    var groupID = angular.element(document.getElementById('content')).scope().groupID;
+    $('#selectGroupId').select2().select2('val', groupID);
+}
+$(document).ready(function() {
+    setTimeout(setValueDropdown, 1000);
+});
+</script>

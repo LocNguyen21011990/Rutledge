@@ -1,0 +1,80 @@
+{
+    "MENU_LEFT_CITY" : "Stadtverwaltung",
+    "MENU_LEFT_ROOM": "Zimmer",
+    "MENU_LEFT_DRILL": "Bohren",
+    "MENU_LEFT_ZONE": "Zone",
+    "MENU_LEFT_RULEMASTER": "Regel Master",
+    "MENU_LEFT_ZONE_DEFINITION": "Zone Definition",
+    "MENU_LEFT_ZONE_MONITORING": "Zone Monitoring",
+    "MENU_LEFT_NOTIFICATION": "Mitteilung-Management",
+    "MENU_LEFT_CHECKIN_CHECKOUT": "CheckIn / CheckOut",
+    "MENU_LEFT_DASHBOARD": "Instrumententafel",
+    "MENU_LEFT_HOME": "Zuhause",
+    "MENU_LEFT_USERS": "Users",
+    "MENU_LEFT_USER_GROUP": "Groups",
+    "MENU_LEFT_SITE_TREE": "Site tree",
+
+    "BUTTON_SAVE": "Sparen",
+    "BUTTON_RESET": "Zurückstellen ",
+    "BUTTON_CANCEL": "Stornieren",
+
+
+    "LOCATION_CITY_ADD": "Fügen Sie eine neue Stadt",
+    "LOCATION_CITY_ALL": "Alle Stadt",
+    "LOCATION_CITY_INFO": "Stadtinfo",
+    "LOCATION_CITY_INFO_NAME": "Name",
+    "LOCATION_CITY_INFO_DESCRIPTION": "Beschreibung",
+    "LOCATION_CITY_INFO_COUNTRYCODE": "Landesvorwahl",
+    "LOCATION_CITY_INFO_STATUS": "Status",
+    "LOCATION_CITY_INFO_STATUS_ACTIVE": "Aktiv",
+    "LOCATION_CITY_INFO_STATUS_INACTIVE": "Inaktiv",
+
+    "LOCATION_CITY_EDIT": "Bearbeiten Sie eine Stadt",
+    "LOCATION_CITY_INFO_EDIT": "Informationen zur Stadt",
+
+
+
+    "LOCATION_DRILL_ADD": "Fügen Sie eine neue Bohrmaschine",
+    "LOCATION_DRILL_ALL": "Alle Bohrer",
+    "LOCATION_DRILL_INFO": "Bohrinformationen",
+    "LOCATION_DRILL_INFO_NAME": "Name",
+    "LOCATION_DRILL_INFO_DESCRIPTION": "Beschreibung",
+    "LOCATION_DRILL_INFO_CITYCODE": "City code",
+    "LOCATION_DRILL_INFO_STATUS": "Status",
+    "LOCATION_DRILL_INFO_STATUS_ACTIVE": "Aktiv",
+    "LOCATION_DRILL_INFO_STATUS_INACTIVE": "Inaktiv",
+
+    "LOCATION_DRILL_EDIT": "Bearbeiten einer Bohrmaschine",
+    "LOCATION_DRILL_INFO_EDIT": "Bearbeiten einer Bohrmaschine Informationen",
+
+
+
+    "LOCATION_ZONE_ADD": "Fügen Sie eine neue Zone",
+    "LOCATION_ZONE_ALL": "Alle Zonen",
+    "LOCATION_ZONE_INFO": "Zoneninformationen ",
+    "LOCATION_ZONE_INFO_NAME": "Name",
+    "LOCATION_ZONE_INFO_DESCRIPTION": "Beschreibung",
+    "LOCATION_ZONE_INFO_DRILLCODE": "Bohren",
+    "LOCATION_ZONE_INFO_STATUS": "Status",
+    "LOCATION_ZONE_INFO_STATUS_ACTIVE": "Aktiv",
+    "LOCATION_ZONE_INFO_STATUS_INACTIVE": "Inaktiv",
+
+    "LOCATION_ZONE_EDIT": "Bearbeiten Sie eine Zone",
+    "LOCATION_ZONE_INFO_EDIT": "Zoneninformationen",
+
+
+
+    "LOCATION_ROOM_ADD": "Fügen Sie einen neuen Raum",
+    "LOCATION_ROOM_ALL": "Alle Zimmer",
+    "LOCATION_ROOM_INFO": "Zimmerinformationen ",
+    "LOCATION_ROOM_INFO_NAME": "Name",
+    "LOCATION_ROOM_INFO_DESCRIPTION": "Beschreibung",
+    "LOCATION_ROOM_INFO_ZONECODE": "Zone",
+    "LOCATION_ROOM_INFO_STATUS": "Status",
+    "LOCATION_ROOM_INFO_STATUS_ACTIVE": "Aktiv",
+    "LOCATION_ROOM_INFO_STATUS_INACTIVE": "Inaktiv",
+
+    "LOCATION_ROOM_EDIT": "Bearbeiten ein Zimmer",
+    "LOCATION_ROOM_INFO_EDIT": "Zimmerinformation "
+
+}

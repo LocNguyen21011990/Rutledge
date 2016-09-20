@@ -1,0 +1,13 @@
+[{
+    "key": "en",
+    "name": "English (US)",
+    "cflag": "flag flag-us"
+}, {
+    "key": "vi",
+    "name": "Vietnam",
+    "cflag": "flag flag-vn"
+}, {
+    "key": "de",
+    "name": "Deutsch",
+    "cflag": "flag flag-de"
+}]

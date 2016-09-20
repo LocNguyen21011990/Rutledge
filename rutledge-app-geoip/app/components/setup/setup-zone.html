@@ -1,0 +1,338 @@
+<div id="content">
+<div class="row">
+    <big-breadcrumbs items="['New Zone Setup']" icon="home"
+                     class="col-xs-12 col-sm-7 col-md-7 col-lg-4"></big-breadcrumbs>
+</div>
+
+
+<!-- widget grid -->
+<section id="widget-grid" widget-grid>
+
+<!-- row -->
+<div class="row">
+
+<!-- NEW WIDGET START -->
+<article class="col-sm-12 col-md-12 col-lg-6">
+
+<!-- Widget ID (each widget will need unique ID)-->
+<div jarvis-widget id="wid-id-0" data-widget-color="darken" data-widget-editbutton="false"
+     data-widget-deletebutton="false">
+<!-- widget options:
+	data-widget-colorbutton="false"
+	data-widget-editbutton="false"
+	data-widget-togglebutton="false"
+	data-widget-deletebutton="false"
+	data-widget-fullscreenbutton="false"
+	data-widget-custombutton="false"
+	data-widget-collapsed="true"
+	data-widget-sortable="false"
+-->
+<header> <h2>Zone Wizard</h2> </header>
+
+<!-- widget div-->
+<div>
+
+<!-- widget content -->
+<div class="widget-body">
+
+<div class="row">
+<form novalidate="novalidate" data-smart-validate-form>
+<div class="col-sm-12" data-smart-wizard data-smart-wizard-callback="wizard1CompleteCallback">
+<div class="form-bootstrapWizard clearfix">
+    <ul class="bootstrapWizard">
+        <li data-smart-wizard-tab="1" >
+            <a href="#" > <span class="step">1</span> <span class="title">Zone Basics</span> </a>
+        </li>
+        <li data-smart-wizard-tab="2" >
+            <a href="#" > <span class="step">2</span> <span class="title">Add Rooms</span> </a>
+        </li>
+        <li data-smart-wizard-tab="3">
+            <a href="#" > <span class="step">3</span> <span class="title">Add Sensors</span> </a>
+        </li>
+        <li data-smart-wizard-tab="4">
+            <a href="#" > <span class="step">4</span> <span class="title">Complete</span> </a>
+        </li>
+    </ul>
+</div>
+<div class="tab-content">
+
+
+<div class="tab-pane" data-smart-wizard-pane="1" >
+    <br> <h3><strong>Step 1 </strong> - Zone Basics</h3>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-info fa-lg fa-fw"></i></span>
+                    <input class="form-control input-lg" placeholder="Zone Name" type="text" name="zonename"
+                           data-smart-validate-input
+                           data-required
+                           data-message="Please specify the Zone name">
+
+                </div>
+            </div>
+        </div>
+	</div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-flag fa-lg fa-fw"></i></span>
+                    <select name="country"  data-smart-validate-input data-required  class="form-control input-lg">
+                        <option value="" selected="selected">Select Country</option>
+                        <option value="Singapore">Singapore</option>
+                        <option value="United States">United States</option>
+                        <option value="Venezuela">Venezuela</option>
+                        <option value="Viet Nam">Viet Nam</option>
+                        <option value="Virgin Islands, British">Virgin Islands, British</option>
+                        <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+                        <option value="Wallis and Futuna">Wallis and Futuna</option>
+                        <option value="Western Sahara">Western Sahara</option>
+                        <option value="Yemen">Yemen</option>
+                        <option value="Zambia">Zambia</option>
+                        <option value="Zimbabwe">Zimbabwe</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-map-marker fa-lg fa-fw"></i></span>
+                    <select class="form-control input-lg"  data-smart-validate-input data-required name="city">
+                        <option value="" selected="selected">Select City</option>
+                        <option>Singapore</option>
+                        <option>Amsterdam</option>
+                        <option>Atlanta</option>
+                        <option>Baltimore</option>
+                        <option>Boston</option>
+                        <option>Miami</option>
+                        <option>Minneapolis</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="tab-pane" data-smart-wizard-pane="2"  >
+    <br> <h3><strong>Step 2</strong> - Add rooms</h3>
+    <div class="alert alert-success fade in">
+        <button class="close" data-dismiss="alert">×</button>
+        <i class="fa-fw fa fa-check"></i>
+        New room has been added!
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-info fa-lg fa-fw"></i></span>
+                    <input class="form-control input-lg" placeholder="Room Name" type="text" name="roomname"
+                           data-smart-validate-input
+                           data-required
+                           data-message="Please specify the Room name">
+                    <span class="input-group-btn">
+                        <a href-void="" class="btn btn-default btn-lg" href="#"><i class="fa fa-plus fa-lg"></i></a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="fa fa-bell fa-lg fa-fw"></i>
+                    </span>
+                    <div class="icon-addon">
+                        <select name="country"  data-smart-validate-input data-required  class="form-control input-lg">
+                            <option value="" selected="selected">Select Rule</option>
+                            <option value="Staying time">Staying time</option>
+                            <option value="Maximum number of people">Maximum number of people</option>
+                        </select>
+                    </div>
+                    <span class="input-group-btn">
+                        <a href-void="" class="btn btn-default btn-lg disabled" href="#"><i class="fa fa-gear fa-lg"></i></a>
+                    </span>
+                </div>
+            </div>
+        </div>        
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-lg-12">
+            <h6>Applied Rules</h6>
+            <div class="dd" data-smart-nestable data-group="1" data-output="nestable2DemoOutput">
+                <ol class="dd-list">
+                    <li class="dd-item" data-id="1">
+                        <div class="dd-handle">
+                            Staying time
+                            <span class="pull-right">
+                                <span class="onoffswitch">
+                                    <input type="checkbox" name="start_interval" class="onoffswitch-checkbox" id="start_interval">
+                                    <label class="onoffswitch-label" for="start_interval">
+                                        <span class="onoffswitch-inner" data-swchon-text="ON" data-swchoff-text="OFF"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                    </label>
+                                </span>
+                            </span>
+                        </div>
+                    </li>
+                    <li class="dd-item" data-id="2">
+                        <div class="dd-handle">
+                            Maximum number of people
+                            <em class="pull-right badge bg-color-orange padding-5" rel="tooltip" title data-placement="left" data-original-title="Warning Icon Text"><i class="fa fa-warning fa-lg txt-color-white"></i></em>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="tab-pane" data-smart-wizard-pane="3" >
+    <br> <h3><strong>Step 3</strong> - Add Sensors</h3>
+
+    <div class="alert alert-warning fade in">
+        <button class="close" data-dismiss="alert">×</button>
+        <i class="fa-fw fa fa-warning"></i><strong>Warn!</strong>
+        No sensors available right now!
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-th-largefa-lg fa-fw"></i></span>
+                    <select name="country"  data-smart-validate-input data-required  class="form-control input-lg">
+                        <option value="" selected="selected">Select Room</option>
+                        <option value="1-A">Room 1-A</option>
+                        <option value="2-B">Room 2-B</option>
+                    </select>
+                </div>
+            </div>
+        </div>        
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-book fa-ticket fa-fw"></i></span>
+                    <select name="country"  data-smart-validate-input data-required  class="form-control input-lg">
+                        <option value="" selected="selected">Select Sensor</option>
+                    </select>
+                    <span class="input-group-btn">
+                        <a href-void="" class="btn btn-default btn-lg" href="#"><i class="fa fa-plus fa-lg"></i></a>
+                    </span>
+                </div>
+            </div>
+        </div>        
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-lg-12">
+            <h6>Sensor List</h6>
+            <div class="dd" data-smart-nestable data-group="1" data-output="nestable2DemoOutput">
+                
+            </div>
+        </div>
+    </div>
+</div>
+<div class="tab-pane" data-smart-wizard-pane="4" >
+    <br>
+
+    <h3><strong>Step 4</strong> - Complete</h3>
+    <br>
+
+    <h1 class="text-center text-success"><strong><i class="fa fa-check fa-lg"></i> Completed</strong></h1>
+    <h4 class="text-center">Click next to finish</h4>
+    <br>
+    <br>
+</div>
+
+<div class="form-actions">
+    <div class="row">
+        <div class="col-sm-12">
+            <ul class="pager wizard no-margin">
+                <li class="previous" data-smart-wizard-prev>
+                    <a href="#" class="btn btn-lg btn-default"> Previous </a>
+                </li>
+                <li class="next" data-smart-wizard-next>
+                    <a href="#" class="btn btn-lg txt-color-darken"> Next </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+</form>
+</div>
+
+</div>
+<!-- end widget content -->
+
+</div>
+<!-- end widget div -->
+
+</div>
+<!-- end widget -->
+
+</article>
+<!-- WIDGET END -->
+
+
+<!-- NEW WIDGET START -->
+<article class="col-sm-12 col-md-12 col-lg-6">
+
+<!-- Widget ID (each widget will need unique ID)-->
+<div jarvis-widget id="wid-id-0" data-widget-color="darken" data-widget-editbutton="false"
+     data-widget-deletebutton="false">
+<!-- widget options:
+	data-widget-colorbutton="false"
+	data-widget-editbutton="false"
+	data-widget-togglebutton="false"
+	data-widget-deletebutton="false"
+	data-widget-fullscreenbutton="false"
+	data-widget-custombutton="false"
+	data-widget-collapsed="true"
+	data-widget-sortable="false"
+-->
+<header>
+    <span class="widget-icon"> <i class="fa fa-map-marker"></i> </span>
+
+    <h2>Map</h2>
+
+</header>
+
+<!-- widget div-->
+<div>
+
+<!-- widget content -->
+<div class="widget-body">
+	<h1>Map doing things....</h1>
+</div>
+<!-- end widget content -->
+
+</div>
+<!-- end widget div -->
+
+</div>
+<!-- end widget -->
+
+</article>
+<!-- WIDGET END -->
+
+</div>
+
+<!-- end row -->
+
+</section>
+
+
+<!-- end widget grid -->
+
+
+</div>

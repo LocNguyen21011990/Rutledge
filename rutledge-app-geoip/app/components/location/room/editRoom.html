@@ -1,0 +1,78 @@
+<style type="text/css">
+.table-detail {
+    margin-left: 20px;
+}
+</style>
+<div id="content" >
+    <div class="row heading">
+        <a href="#"><h3>LOCATION ROOM</h3></a>
+        <div class="clear-br"></div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="row">
+                <div class="heading">
+                    <h4>Edit Room</h4>
+                </div>
+                <div class="jarviswidget" id="wid-id-2" data-widget-colorbutton="false" data-widget-editbutton="false">
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-eye"></i> </span>
+                        <h2>Room info</h2>
+                    </header>
+                    <div class="widget-body">
+                        <form>
+                            <fieldset>
+                                <div class="form-group">
+                                    <label>Room Name</label>
+                                    <input class="form-control" placeholder="HCM" type="text" ng-model="roomName">
+                                </div>
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <textarea class="form-control" placeholder="Type your description" rows="3" ng-model="roomDescription"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputGender">City</label>
+                                    <select class="form-control" placeholder="City" ng-model="cityID" ng-click="getDrillByCityId()">
+                                        <option value="">Select City...</option>
+                                        <option ng-repeat="city in cities" value="{{city.id}}">{{city.name}}</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputGender">Drill</label>
+                                    <select class="form-control" placeholder="Drill" ng-model="drillID" ng-click="getZoneByDrillId()">
+                                        <option value="">Select Drill...</option>
+                                        <option ng-repeat="drill in allDrills" value="{{drill.id}}">{{drill.name}}</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputGender">Zone</label>
+                                    <select class="form-control" placeholder="drill" ng-model="zoneID">
+                                        <option value="">Select Zone...</option>
+                                        <option ng-repeat="zone in allZones" value="{{zone.id}}">{{zone.name}}</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Status</label>
+                                    <br>
+                                    <label>
+                                        <input class="radiobox" name="style-0a" type="radio" ng-model="status" value="1">
+                                        <span>Active</span>
+                                    </label>
+                                    <label>
+                                        <input class="radiobox" name="style-0a" type="radio" ng-model="status" value="0">
+                                        <span>InActive</span>
+                                    </label>
+                                </div>
+                            </fieldset>
+                             <div class="form-actions">
+                                <button type="submit" class="btn btn-primary" ng-click="updateInfoRoom()">Save</button>
+                                <button type="button" ng-click="goListDrill()" class="btn btn-default">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

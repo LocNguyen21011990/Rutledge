@@ -1,0 +1,40 @@
+<aside id="left-panel">
+    <div class="login-info">
+        <span class="dropdown">
+            <a data-toggle="dropdown" data-target="#" href="javascript:void(0);" aria-expanded="false">
+                <img src="images/avatar.png" alt="me" class="online" />
+                <span class="loggedUserName" ng-show="isShowLoggedUserName">{{loggedUser.fullname}}</span>
+                <span class="caret"></span> 
+            </a>
+            <ul class="dropdown-menu multi-level" role="menu">
+                <li>
+                    <a href="javascript:void(0);" ng-click="changePassword()">Change Password</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a href="javascript:void(0);" ng-click="logout()">Log Out</a>
+                </li>
+            </ul>
+        </span>
+    </div>
+    <nav>
+        <ul>
+
+            <li class="active">
+                <a href="/" title="Home">
+                    <i class="fa fa-lg fa-fw fa-home"></i>
+                    <span class="menu-item-parent">{{'MENU_LEFT_HOME' | translate}}</span>
+                </a>
+            </li>
+            <li ng-repeat="page in pages">
+                <a ui-sref="{{page.link}}" title="{{page.title}}">
+                    <i class="fa fa-lg fa-fw {{page.icon}}"></i>
+                    <span class="menu-item-parent">{{page.keylanguage | translate}}</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <span class="minifyme" data-action="minifyMenu" ng-click="setStatusLoggedUserName()"> 
+		<i class="fa fa-arrow-circle-left hit"></i> 
+	</span>
+</aside>
